@@ -1,0 +1,8 @@
+flask
+flask-cors
+gunicorn
+pymilvus==2.4.0
+environs==9.5.0
+marshmallow==3.19.0
+sentence-transformers
+openai==0.28
