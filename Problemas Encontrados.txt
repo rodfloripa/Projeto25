@@ -1,0 +1,57 @@
+Problemas Encontrados
+1. Container com 7Gb
+
+    O Erro: Container grande demais para o Heroku,que tem limite de 2Gb.
+
+    A Causa: Foi usado sentence transformers paraphrase-multilingual-mpnet-base-v2
+
+    A Solução: Usar o modelo all-MiniLM-L6-v2, que reduziu o container para 1.7 Gb
+    
+2. Incompatibilidade do marshmallow
+
+    O Erro: ImportError: cannot import name 'Raw' from 'marshmallow.fields'.
+
+    A Causa: Uma versão muito nova da biblioteca marshmallow removeu ou alterou campos que outras bibliotecas (como o Flask-Marshmallow) dependiam.
+
+    A Solução: Fixamos a versão estável no requirements.txt (marshmallow==3.19.0).
+
+3. Mudança na API do Milvus (pymilvus)
+
+    O Erro: AttributeError: 'Connections' object has no attribute 'get_connection'.
+
+    A Causa: O código foi escrito seguindo tutoriais antigos. Nas versões recentes do pymilvus (2.4+), o gerenciamento de conexões mudou.
+
+    A Solução: Substituímos o uso de connections.get_connection() pela classe utility, usando utility.has_collection(collection_name).
+
+4. Variáveis de Ambiente Inexistentes
+
+    O Erro: pymilvus.exceptions.ConnectionConfigException: Illegal uri: [None].
+
+    A Causa: Ao rodar no Docker local, o container não "enxergava" as chaves do Zilliz porque elas não tinham sido passadas no comando docker run.
+
+    A Solução: Aprendemos a usar a flag -e no Docker para passar as variáveis de ambiente (-e MILVUS_URI=...).
+
+5. Conflito de Versão da OpenAI (v0.28 vs v1.0+)
+
+    O Erro: You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0.
+
+    A Causa: A OpenAI reformulou toda a biblioteca em 2023. O seu código usava o estilo antigo, mas o Docker instalava a versão nova por padrão.
+
+    A Solução: Fixamos a versão antiga no requirements.txt (openai==0.28) para manter a compatibilidade sem precisar reescrever o código.
+
+
+6. Erro de Quota e Créditos
+
+    O Erro: You exceeded your current quota....
+
+    A Causa: A conta da OpenAI estava sem créditos ativos (ou os gratuitos expiraram).
+
+    A Solução: Você identificou a necessidade de recarregar o saldo (mínimo de $5) no painel da OpenAI.
+
+7. Formatação de Acentos (Unicode)
+
+    O Sintoma: A resposta vinha com códigos como \u00e9 em vez de "é".
+
+    A Causa: O Flask/JSON por padrão escapa caracteres não-ASCII por segurança.
+
+    A Solução: Explicamos como usar ensure_ascii=False no Python ou como tratar a resposta no Front-end (o navegador converte automaticamente).
