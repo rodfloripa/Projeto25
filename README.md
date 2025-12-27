@@ -5,4 +5,8 @@
   all-MiniLM-L6-v2, que reduziu bastante o tamanho do container,já que o limite do Heroku é 2GB.
 </p>
 
+<p align="center">
+  <img src="RodMed.png" alt="Sistema Construído">
+</p>
+
 
