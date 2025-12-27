@@ -5,6 +5,18 @@
   all-MiniLM-L6-v2, que reduziu bastante o tamanho do container,já que o limite do Heroku é 2GB.
 </p>
 
+Tecnologias:
+
+   - Linguagem: Python 3.9
+
+   - Servidor Web: Flask + Gunicorn
+
+   - Banco de Vetores: Milvus (Zilliz Cloud)
+
+   - Modelo de IA: OpenAI (GPT) + SentenceTransformers (Local)
+
+   - Infraestrutura: Docker + Heroku (Container Registry)
+
 <p align="center">
   <img src="RodMed.png" alt="Sistema Construído">
 Sistema Construído
