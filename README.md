@@ -30,6 +30,7 @@ Subir uma API Python para o Heroku utilizando Docker é uma excelente escolha, e
 Aqui está o roteiro completo para configurar e realizar o deploy:
 
 ---
+Abra sua conta no <a href="https://www.heroku.com/">Heroku</a> e <a href="https://cloud.zilliz.com/login">Zilliz Cloud</a> se ainda nao tiver uma.
 
 ### 1. Preparação dos Arquivos Locais
 
@@ -51,7 +52,8 @@ Para o Heroku, o Dockerfile precisa ser otimizado. O ponto mais importante é qu
 
 ### 3. Conexão com Zilliz Cloud (Segurança)
 
-**Nunca** coloque suas credenciais (URI e Token) direto no código. No seu script Python, use variáveis de ambiente:
+**Nunca** coloque suas credenciais (URI e Token) direto no código. No seu script Python, use variáveis de ambiente.
+Nao se preocupe,isto ja está no código python,estou mostrando apenas para conhecimento.
 
 ```python
 import os
