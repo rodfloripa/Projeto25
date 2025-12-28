@@ -43,7 +43,8 @@ Certifique-se de que sua estrutura de pastas contenha os três arquivos essencia
 ### 2. Configurando o Dockerfile
 
 Para o Heroku, o Dockerfile precisa ser otimizado. O ponto mais importante é que o Heroku ignora a porta que você define no Dockerfile e atribui uma porta dinâmica através da variável de ambiente `$PORT`.
-
+Nao se preocupe,isto ja está no dockerfile,
+estou mostrando apenas para conhecimento.
 
  **Nota:** Se estiver usando FastAPI, o comando seria:
  `CMD uvicorn main:app --host 0.0.0.0 --port $PORT`
