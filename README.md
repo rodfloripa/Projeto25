@@ -132,6 +132,6 @@ heroku logs --tail -a nome-do-seu-app
 
 Testando
 
-curl -s -X POST https://rodmed-0679e14348f9.herokuapp.com/sac \
+curl -s -X POST sua_url_heroku/sac \
      -H "Content-Type: application/json" \
      -d '{"pergunta": "Como evitar a dengue?"}' | python3 -c "import sys, json; print(json.dumps(json.load(sys.stdin), ensure_ascii=False, indent=2))"
