@@ -24,7 +24,7 @@ Sistema Construído
 </p>
 
 ### Como subir no Heroku
-
+<p align="justify">
 Subir uma API Python para o Heroku utilizando Docker é uma excelente escolha, especialmente quando você tem dependências específicas como o SDK do Milvus (Zilliz). O Heroku utiliza o **Container Registry** para esse processo.
 
 Aqui está o roteiro completo para configurar e realizar o deploy:
@@ -41,20 +41,22 @@ Certifique-se de que sua estrutura de pastas contenha os três arquivos essencia
 * **`Dockerfile`**: As instruções de build da imagem.
 
 ### 2. Configurando o Dockerfile
-
+<p align="justify">
 Para o Heroku, o Dockerfile precisa ser otimizado. O ponto mais importante é que o Heroku ignora a porta que você define no Dockerfile e atribui uma porta dinâmica através da variável de ambiente `$PORT`.
 Nao se preocupe,isto ja está no dockerfile,
 estou mostrando apenas para conhecimento.
-
+</p>
  **Nota:** Se estiver usando FastAPI, o comando seria:
  `CMD uvicorn main:app --host 0.0.0.0 --port $PORT`
 
 ---
 
 ### 3. Conexão com Zilliz Cloud (Segurança)
-
+<p align="justify">
 **Nunca** coloque suas credenciais (URI e Token) direto no código. No seu script Python, use variáveis de ambiente.
 Nao se preocupe,isto ja está no código python,estou mostrando apenas para conhecimento.
+
+</p> 
 
 ```python
 import os
@@ -70,9 +72,6 @@ connections.connect(
 )
 
 ```
-
----
-
 ### 4. Deploy via Heroku CLI
 
 Abra o terminal na pasta do projeto e siga estes comandos:
@@ -128,9 +127,9 @@ heroku logs --tail -a nome-do-seu-app
 ```
 
 ---
-
+<p align="justify">
 **Dica Extra:** Como o Zilliz Cloud exige conexão segura, certifique-se de que a biblioteca `pymilvus` no seu `requirements.txt` esteja atualizada para evitar problemas de compatibilidade com o gRPC no ambiente Linux do Docker.
-
+</p>
 Testando
 
 curl -s -X POST sua_url_heroku/sac \
