@@ -23,6 +23,9 @@ Sistema Construído
 
 </p>
 
+
+<a href="https://www.linkedin.com/posts/cientista-de-dados1_llm-ministeriodasaude-rag-activity-7410728357278941184-G9D4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAUblZMBhr9goiDPfQ2w_j09X_HZjjrcfYU">Veja o video do sistema no seu PC(no celular ficou pequeno)</a>
+
 ### Como subir no Heroku
 <p align="justify">
 Subir uma API Python para o Heroku utilizando Docker é uma excelente escolha, especialmente quando você tem dependências específicas como o SDK do Milvus (Zilliz). O Heroku utiliza o **Container Registry** para esse processo.
