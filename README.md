@@ -99,6 +99,7 @@ Vá ao painel do Heroku ou use o terminal para adicionar os dados do Zilliz:
 ```bash
 heroku config:set ZILLIZ_CLOUD_URI=https://sua-uri.zillizcloud.com
 heroku config:set ZILLIZ_CLOUD_TOKEN=seu-token-aqui
+heroku config:set OPENAI_API_KEY=sua_key_aqui
 
 ```
 
