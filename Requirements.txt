@@ -1,8 +1,12 @@
-flask
-flask-cors
-gunicorn
+flask==3.0.3
+flask-cors==4.0.0
+gunicorn==22.0.0
 pymilvus==2.4.0
 environs==9.5.0
 marshmallow==3.19.0
-sentence-transformers
+sentence-transformers==2.2.2
 openai==0.28
+numpy==1.26.4
+torch==2.1.2+cpu --index-url https://download.pytorch.org/whl/cpu
+transformers==4.35.2
+huggingface-hub==0.19.4
